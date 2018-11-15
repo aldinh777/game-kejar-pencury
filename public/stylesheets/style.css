@@ -1,0 +1,69 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.entity {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-size: 100% 100%;
+}
+.wall {
+  background-image: url('/images/wall.jpg');
+}
+.card {
+  position: absolute;
+  background: bisque;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 25%;
+}
+.title {
+  padding: 5% 10%;
+  text-align: center;
+  font-size: 30px;
+}
+.option button {
+  display: block;
+  background: yellowgreen;
+  padding: 10px;
+  margin: 5px 25%;
+  width: 50%;
+  margin: 5px 25%;
+}
+.option button:focus {
+  opacity: 0.5;
+}
+.option .label {
+  text-align: center;
+}
+.option input {
+  padding: 10px;
+  margin: 5px 10%;
+  width: 75%;
+}
+.option button.back {
+  background: orangered;
+}
+.hide {
+  display: none;
+}
+#main {
+  position: relative;
+  background: #00B7FF;
+  width: 1024px;
+  height: 640px;
+}
+#chaser {
+  background-image: url('/images/kejar.jpeg');
+  left: 0px;
+}
+#runner {
+  background-image: url('/images/tes.png');
+  left: 120px;
+}
