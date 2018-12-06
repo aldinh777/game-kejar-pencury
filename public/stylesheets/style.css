@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
 }
 
 a {
@@ -13,28 +14,30 @@ a {
   background-size: 100% 100%;
 }
 .wall {
-  background-image: url('/images/wall.jpg');
+  background-image: url('/images/gajaraya/wall3.jpg');
 }
 .card {
   position: absolute;
-  background: bisque;
   width: 50%;
   height: 50%;
   left: 25%;
   top: 25%;
 }
 .title {
+  visibility: hidden;
   padding: 5% 10%;
+  margin: 5%;
   text-align: center;
   font-size: 30px;
 }
 .option button {
   display: block;
-  background: yellowgreen;
+  background-color: rgba(0, 0, 0, 0);
   padding: 10px;
   margin: 5px 25%;
   width: 50%;
-  margin: 5px 25%;
+  height: 75px;
+  margin: 10px 25%;
 }
 .option button:focus {
   opacity: 0.5;
@@ -54,16 +57,21 @@ a {
   display: none;
 }
 #main {
+  transform: scale(1.32, 1.2);
   position: relative;
-  background: #00B7FF;
+  background-image: url('/images/gajaraya/menu-empty.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   width: 1024px;
   height: 640px;
+  margin-top: 4.5%;
+  margin-left: 12%;
 }
 #chaser {
-  background-image: url('/images/kejar.jpeg');
+  background-image: url('/images/gajaraya/papua.png');
   left: 0px;
 }
 #runner {
-  background-image: url('/images/tes.png');
+  background-image: url('/images/gajaraya/jakarta.png');
   left: 120px;
 }

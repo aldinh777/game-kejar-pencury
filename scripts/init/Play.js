@@ -18,12 +18,6 @@ class initPlay {
         initPlay.countStart = setInterval(countDown, 1000);
     }
     static initialMap() {
-        
-    }
-    static online(roomName, yourRole) {
-        initPlay.pengejar = new SlideEntity(Entity.createElement('div', { id: 'chaser' }), 1000, 4, { x: 1 * 32, y: 1 * 32 }, { x: 32, y: 32 });
-        initPlay.pelari = new SlideEntity(Entity.createElement('div', { id: 'runner' }), 1000, 4, { x: 30 * 32, y: 1 * 32 }, { x: 32, y: 32 });
-
         WallEntity.drawHorizontalLine(0, 0, 32);
         WallEntity.drawHorizontalLine(0, 19, 32);
         WallEntity.drawVerticalLine(0, 0, 20);
@@ -40,8 +34,18 @@ class initPlay {
         WallEntity.drawPoint(4, 7);
         WallEntity.drawPoint(6, 6);
 
+        WallEntity.drawPoint(20, 14);
+        WallEntity.drawPoint(12, 5);
+
         WallEntity.drawPoint(31-6, 19-6);
         WallEntity.drawPoint(31-4, 19-7);
+        
+    }
+    static online(roomName, yourRole) {
+        initPlay.pengejar = new SlideEntity(Entity.createElement('div', { id: 'chaser' }), 1000, 4, { x: 1 * 32, y: 1 * 32 }, { x: 32, y: 32 });
+        initPlay.pelari = new SlideEntity(Entity.createElement('div', { id: 'runner' }), 1000, 4, { x: 30 * 32, y: 1 * 32 }, { x: 32, y: 32 });
+
+        initPlay.initialMap();
 
         WallEntity.sign(initPlay.pengejar, () => {
             initPlay.pengejar.stop();
@@ -146,24 +150,8 @@ class initPlay {
     static offline() {
         initPlay.pengejar = new SlideEntity(Entity.createElement('div', { id: 'chaser' }), 1000, 4, { x: 1 * 32, y: 1 * 32 }, { x: 32, y: 32 });
         initPlay.pelari = new SlideEntity(Entity.createElement('div', { id: 'runner' }), 1000, 4, { x: 30 * 32, y: 1 * 32 }, { x: 32, y: 32 });
-        WallEntity.drawHorizontalLine(0, 0, 32);
-        WallEntity.drawHorizontalLine(0, 19, 32);
-        WallEntity.drawVerticalLine(0, 0, 20);
-        WallEntity.drawVerticalLine(31, 0, 20);
-        
-        WallEntity.drawHorizontalLine(31-10, 5, 6);
-        WallEntity.drawVerticalLine(5, 1, 5);
-        WallEntity.drawVerticalLine(31-5, 1, 5);
 
-        WallEntity.drawHorizontalLine(6, 19-5, 6);
-        WallEntity.drawVerticalLine(5, 19-5, 5);
-        WallEntity.drawVerticalLine(31-5, 19-5, 5);
-
-        WallEntity.drawPoint(4, 7);
-        WallEntity.drawPoint(6, 6);
-
-        WallEntity.drawPoint(31-6, 19-6);
-        WallEntity.drawPoint(31-4, 19-7);
+        initPlay.initialMap();
 
         initPlay.pelari.remap('left', 'j');
         initPlay.pelari.remap('up', 'i');
@@ -186,6 +174,6 @@ class initPlay {
         initPlay.timerStart();
     }
 }
-initPlay.globalTimeLimit = 20;
+initPlay.globalTimeLimit = 30;
 
 module.exports = initPlay;

@@ -14,9 +14,11 @@ module.exports = class SlideEntity extends Entity {
             const slideInterval = setInterval(() => {
                 switch (this.direction) {
                     case 'left':
+                        this.element.style.transform = 'scale(-1, 1)';
                         super.moveLeft();
                         break;
                     case 'right':
+                        this.element.style.transform = 'scale(1, 1)';
                         super.moveRight();
                         break;
                     case 'up':

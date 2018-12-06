@@ -48,8 +48,14 @@ class Card {
             this.currentCard = null;
         }
     }
-    static button(text, callback) {
+    static button(text, bg, callback) {
         const button = document.createElement('button');
+        if (callback) {
+            button.style.backgroundImage = `url('/images/gajaraya/${bg}')`;
+            button.style.backgroundSize = `100% 100%`;            
+        } else {
+            callback = bg;
+        }
         button.appendChild(document.createTextNode(text));
         button.onclick = callback;
         return button;
